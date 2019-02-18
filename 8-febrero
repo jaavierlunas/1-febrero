@@ -1,0 +1,52 @@
+int x;
+int y;
+int z;
+int led1 = 3;
+int led2 = 5;
+int led3 = 7;
+
+void setup() {
+  //Led 1
+  Serial.begin(9600);
+  Serial.println("¿Cuánto tiempo prenderá el led rojo?");
+  while(Serial.available() == 0){
+    
+  }
+  x= Serial.parseInt();
+  pinMode(led1, OUTPUT);
+  
+  //Led 2
+  Serial.begin(9600);
+  Serial.println("¿Cuánto tiempo prenderá el led verde?");
+  while(Serial.available() == 0){
+    
+  }
+  y= Serial.parseInt();
+  pinMode(led2, OUTPUT);
+
+  //led 3
+  Serial.begin(9600);
+  Serial.println("¿Cuánto tiempo prenderá el led azul?");
+  while(Serial.available() == 0){
+    
+  }
+  z= Serial.parseInt();
+  pinMode(led3, OUTPUT);
+
+}
+
+void loop() {
+  digitalWrite(led1, HIGH);
+  delay(x);
+  digitalWrite(led1, LOW);
+  delay(x);
+  digitalWrite(led2, HIGH);
+  delay(y);
+  digitalWrite(led2, LOW);
+  delay(y);
+  digitalWrite(led3, HIGH);
+  delay(z);
+  digitalWrite(led3, LOW);
+  delay(z);
+
+}
